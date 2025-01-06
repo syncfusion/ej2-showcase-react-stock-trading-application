@@ -166,7 +166,7 @@ export default function MyPortfolio(props: { changeMarquee: Function, myStockDm:
               allowSelection={false}
               allowKeyboard={false}
               emptyRecordTemplate={()=>{
-                return (<MessageComponent id="msg_info" content="Add companies to your wishlists from the overview section!." severity="Info" variant="Filled"></MessageComponent>);
+                return (<MessageComponent id="msg_info" content="Your portfolio has no stocks." severity="Info" variant="Filled"></MessageComponent>);
               }}
             >
               <ColumnsDirective>
