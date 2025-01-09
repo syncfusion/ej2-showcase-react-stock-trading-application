@@ -173,6 +173,17 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
       let query: Query = new Query().where(Predicate.or(predicates));
       (props.myStockDm as any).persistQuery = query;
       props.myStockDm.setPersistData({} as any, 'myStocks', query);
+      if (myWishList.length) {
+        const myWishlistIcon = args.target.querySelector('.addmywishlist');
+        if (myWishlistIcon) {
+          myWishlistIcon.classList.remove('addmywishlist');
+          myWishlistIcon.classList.add('addedmywishlist');
+        }
+        if (args.target.classList.contains('e-primary')) {
+          args.target.classList.remove('e-primary');
+          args.target.classList.add('e-success');
+        }
+      }
     }
     if (args.target!.querySelector('.analysis')) {
       navigate('/stock_analysis', {
@@ -234,6 +245,7 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
               allowKeyboard={false}
               commandClick={commandClick}
               destroyed={destroyed}
+              height={341}
             >
               <ColumnsDirective>
                 <ColumnDirective
@@ -309,14 +321,14 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
                       title: 'Add to Wishlist',
                       buttonOption: {
                         iconCss: 'addmywishlist e-icons',
-                        cssClass: 'e-flat',
+                        cssClass: 'e-primary' ,
                       },
                     },
                     {
                       title: 'Analysis',
                       buttonOption: {
                         iconCss: 'analysis e-icons',
-                        cssClass: 'e-flat',
+                        cssClass: 'e-primary',
                       },
                     },
                   ]}
