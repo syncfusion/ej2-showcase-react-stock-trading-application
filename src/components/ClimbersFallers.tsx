@@ -54,6 +54,7 @@ export default function ClimbersFallers() {
             allowPaging={true}
             pageSettings={{ pageCount: 4, pageSize: 7 }}
             enableHover={false}
+            height={270}
           >
             <ColumnsDirective>
               <ColumnDirective
@@ -133,6 +134,7 @@ export default function ClimbersFallers() {
             allowPaging={true}
             pageSettings={{ pageCount: 4, pageSize: 7 }}
             enableHover={false}
+            height={270}
           >
             <ColumnsDirective>
               <ColumnDirective

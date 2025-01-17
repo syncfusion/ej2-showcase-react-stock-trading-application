@@ -118,6 +118,7 @@ export default function StockAnalysis() {
             chartArea={{ border: { width: 0 } }}
             tooltip={{ enable: true, shared: true }}
             crosshair={{ enable: true }}
+            height='330px'
           >
             <Inject
               services={[
