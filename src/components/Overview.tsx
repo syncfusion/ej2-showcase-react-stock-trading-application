@@ -245,7 +245,7 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
               allowKeyboard={false}
               commandClick={commandClick}
               destroyed={destroyed}
-              height={341}
+              height={250}
             >
               <ColumnsDirective>
                 <ColumnDirective
