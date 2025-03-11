@@ -250,8 +250,7 @@ export default function MyPortfolio(props: { changeMarquee: Function, myStockDm:
                     {
                       title: 'Analysis',
                       buttonOption: {
-                        iconCss: 'analysis e-icons',
-                        cssClass: 'e-primary',
+                        iconCss: 'analysis e-icons'
                       },
                     },
                   ]}
