@@ -88,6 +88,24 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
         iconEle!.classList.add('e-chevron-down-double');
       }
     }
+    if (args.column!.field === 'High') {
+      let iconEle = args.cell!.querySelector('.e-icons');
+      iconEle!.classList.add('e-arrow-up');
+      let valueEle = args.cell!.querySelector('.high');
+      if (valueEle) {
+        let value = parseFloat(valueEle.innerHTML);
+        valueEle.innerHTML = (Number as any).isInteger(value) ? value.toString() : value.toFixed(2);
+      }
+    }
+    if (args.column!.field === 'Low') {
+      let iconEle = args.cell!.querySelector('.e-icons');
+      iconEle!.classList.add('e-arrow-down');
+      let valueEle = args.cell!.querySelector('.low');
+      if (valueEle) {
+        let value = parseFloat(valueEle.innerHTML);
+        valueEle.innerHTML = (Number as any).isInteger(value) ? value.toString() : value.toFixed(2);
+      }
+    }
     if (
       args.column!.field === 'Last' ||
       args.column!.field === 'ChangeInValue' ||
@@ -304,12 +322,14 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
                 <ColumnDirective
                   field="High"
                   format="N2"
+                  template="<span class='high'> ${High} </span ><span class='e-icons'></span>"
                   textAlign="Center"
                   width="80"
                 ></ColumnDirective>
                 <ColumnDirective
                   field="Low"
                   format="N2"
+                  template="<span class='low'> ${Low} </span ><span class='e-icons'></span>"
                   textAlign="Center"
                   width="80"
                 ></ColumnDirective>
@@ -331,8 +351,7 @@ export default function Overview(props: { changeMarquee: Function, myStockDm: Da
                     {
                       title: 'Analysis',
                       buttonOption: {
-                        iconCss: 'analysis e-icons',
-                        cssClass: 'e-primary',
+                        iconCss: 'analysis e-icons'
                       },
                     },
                   ]}
