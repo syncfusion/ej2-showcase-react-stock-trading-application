@@ -52,9 +52,9 @@ export default function ClimbersFallers() {
             queryCellInfo={queryCellInfo}
             allowSorting={true}
             allowPaging={true}
-            pageSettings={{ pageCount: 4, pageSize: 7 }}
+            pageSettings={{ pageCount: 4, pageSize: 20 }}
             enableHover={false}
-            height={270}
+            height="100%"
           >
             <ColumnsDirective>
               <ColumnDirective
@@ -132,9 +132,9 @@ export default function ClimbersFallers() {
             queryCellInfo={queryCellInfo}
             allowSorting={true}
             allowPaging={true}
-            pageSettings={{ pageCount: 4, pageSize: 7 }}
+            pageSettings={{ pageCount: 4, pageSize: 20 }}
             enableHover={false}
-            height={270}
+            height="100%"
           >
             <ColumnsDirective>
               <ColumnDirective
