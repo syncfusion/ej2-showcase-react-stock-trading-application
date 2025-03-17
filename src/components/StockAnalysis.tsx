@@ -81,7 +81,7 @@ export default function StockAnalysis() {
     }
   };
   return (
-    <div className="">
+    <div className="stock-chart-container-parent">
       <div>
         <div className="companydd-container">
           <DropDownListComponent
@@ -118,7 +118,7 @@ export default function StockAnalysis() {
             chartArea={{ border: { width: 0 } }}
             tooltip={{ enable: true, shared: true }}
             crosshair={{ enable: true }}
-            height='330px'
+            height={"100%"}
           >
             <Inject
               services={[
